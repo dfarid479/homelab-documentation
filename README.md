@@ -1,4 +1,4 @@
-# HOMELAB
+# Homelab Specs
 
 Production-grade personal cloud infrastructure running on TrueNAS Scale with 20+ containerized services for digital forensics, media automation, and cybersecurity research.
 
