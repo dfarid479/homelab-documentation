@@ -1,0 +1,40 @@
+# Sensitive Information
+*.env
+*.secret
+*.key
+*.pem
+*.crt
+credentials/
+secrets/
+
+# Personal Information
+**/config.yml
+**/settings.ini
+my-*
+real-*
+
+# Logs
+*.log
+logs/
+
+# Backups
+*.bak
+*.backup
+backup-*/
+
+# OS Files
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# Editor Files
+*.swp
+*.swo
+*~
+.vscode/
+.idea/
+
+# Temporary Files
+*.tmp
+temp/
+tmp/

@@ -1,0 +1,206 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 950 750" width="950" height="750">
+  <defs>
+    <style>
+      .title { font: bold 20px sans-serif; fill: #1a1a2e; }
+      .header { font: bold 14px sans-serif; fill: #fff; }
+      .cell { font: 11px monospace; fill: #333; }
+      .cell-highlight { font: bold 11px monospace; fill: #e94560; }
+      .section-title { font: bold 13px sans-serif; fill: #16213e; }
+    </style>
+  </defs>
+  
+  <!-- Background -->
+  <rect width="950" height="750" fill="#f8f9fa"/>
+  
+  <!-- Title -->
+  <text x="475" y="35" text-anchor="middle" class="title">IP Allocation &amp; Port Mapping</text>
+  
+  <!-- Network Info Box -->
+  <rect x="50" y="55" width="850" height="60" rx="5" fill="#16213e"/>
+  <text x="475" y="80" text-anchor="middle" class="header">Network Configuration</text>
+  <text x="150" y="100" text-anchor="middle" font-size="11" fill="#74b9ff">Local: 10.0.0.X/24</text>
+  <text x="350" y="100" text-anchor="middle" font-size="11" fill="#74b9ff">Gateway: 10.0.0.1</text>
+  <text x="550" y="100" text-anchor="middle" font-size="11" fill="#74b9ff">Tailscale: 100.X.X.X</text>
+  <text x="750" y="100" text-anchor="middle" font-size="11" fill="#74b9ff">Docker: 172.20.0.0/16</text>
+  
+  <!-- Infrastructure Services Table -->
+  <text x="60" y="145" class="section-title">Infrastructure Services</text>
+  
+  <!-- Table Header -->
+  <rect x="50" y="155" width="400" height="25" fill="#16213e"/>
+  <text x="130" y="172" text-anchor="middle" class="header">Service</text>
+  <text x="280" y="172" text-anchor="middle" class="header">Port(s)</text>
+  <text x="380" y="172" text-anchor="middle" class="header">Access</text>
+  
+  <!-- Table Rows -->
+  <rect x="50" y="180" width="400" height="25" fill="#e8f4f8"/>
+  <text x="60" y="197" class="cell">Portainer</text>
+  <text x="250" y="197" class="cell">9000</text>
+  <text x="350" y="197" class="cell-highlight">VPN</text>
+  
+  <rect x="50" y="205" width="400" height="25" fill="#fff"/>
+  <text x="60" y="222" class="cell">NGINX Proxy Manager</text>
+  <text x="250" y="222" class="cell">80, 443, 9011</text>
+  <text x="350" y="222" class="cell">Public + VPN</text>
+  
+  <rect x="50" y="230" width="400" height="25" fill="#e8f4f8"/>
+  <text x="60" y="247" class="cell">Tailscale</text>
+  <text x="250" y="247" class="cell">host network</text>
+  <text x="350" y="247" class="cell-highlight">VPN</text>
+  
+  <rect x="50" y="255" width="400" height="25" fill="#fff"/>
+  <text x="60" y="272" class="cell">Pi-hole (DNS)</text>
+  <text x="250" y="272" class="cell">53, 8080</text>
+  <text x="350" y="272" class="cell-highlight">VPN</text>
+  
+  <rect x="50" y="280" width="400" height="25" fill="#e8f4f8"/>
+  <text x="60" y="297" class="cell">Graylog (SIEM)</text>
+  <text x="250" y="297" class="cell">9001, 1514, 12201</text>
+  <text x="350" y="297" class="cell-highlight">VPN</text>
+  
+  <rect x="50" y="305" width="400" height="25" fill="#fff"/>
+  <text x="60" y="322" class="cell">n8n (Automation)</text>
+  <text x="250" y="322" class="cell">5678</text>
+  <text x="350" y="322" class="cell-highlight">VPN</text>
+  
+  <!-- Public Services Table -->
+  <text x="500" y="145" class="section-title">Public Applications</text>
+  
+  <rect x="490" y="155" width="410" height="25" fill="#27ae60"/>
+  <text x="570" y="172" text-anchor="middle" class="header">Service</text>
+  <text x="720" y="172" text-anchor="middle" class="header">Port</text>
+  <text x="840" y="172" text-anchor="middle" class="header">Domain</text>
+  
+  <rect x="490" y="180" width="410" height="25" fill="#e8f4f8"/>
+  <text x="500" y="197" class="cell">Plex</text>
+  <text x="700" y="197" class="cell">32400</text>
+  <text x="800" y="197" class="cell">plex.*</text>
+  
+  <rect x="490" y="205" width="410" height="25" fill="#fff"/>
+  <text x="500" y="222" class="cell">Immich</text>
+  <text x="700" y="222" class="cell">8082</text>
+  <text x="800" y="222" class="cell">photos.*</text>
+  
+  <rect x="490" y="230" width="410" height="25" fill="#e8f4f8"/>
+  <text x="500" y="247" class="cell">Overseerr</text>
+  <text x="700" y="247" class="cell">5055</text>
+  <text x="800" y="247" class="cell">requests.*</text>
+  
+  <rect x="490" y="255" width="410" height="25" fill="#fff"/>
+  <text x="500" y="272" class="cell">Vaultwarden</text>
+  <text x="700" y="272" class="cell">8200</text>
+  <text x="800" y="272" class="cell">vault.*</text>
+  
+  <rect x="490" y="280" width="410" height="25" fill="#e8f4f8"/>
+  <text x="500" y="297" class="cell">FileBrowser</text>
+  <text x="700" y="297" class="cell">8084</text>
+  <text x="800" y="297" class="cell">files.*</text>
+  
+  <!-- Media Automation Table -->
+  <text x="60" y="365" class="section-title">Media Automation (VPN-Only)</text>
+  
+  <rect x="50" y="375" width="400" height="25" fill="#e94560"/>
+  <text x="130" y="392" text-anchor="middle" class="header">Service</text>
+  <text x="280" y="392" text-anchor="middle" class="header">Port</text>
+  <text x="380" y="392" text-anchor="middle" class="header">Function</text>
+  
+  <rect x="50" y="400" width="400" height="25" fill="#e8f4f8"/>
+  <text x="60" y="417" class="cell">Radarr</text>
+  <text x="260" y="417" class="cell">7878</text>
+  <text x="340" y="417" class="cell">Movies</text>
+  
+  <rect x="50" y="425" width="400" height="25" fill="#fff"/>
+  <text x="60" y="442" class="cell">Sonarr</text>
+  <text x="260" y="442" class="cell">8989</text>
+  <text x="340" y="442" class="cell">TV Shows</text>
+  
+  <rect x="50" y="450" width="400" height="25" fill="#e8f4f8"/>
+  <text x="60" y="467" class="cell">Prowlarr</text>
+  <text x="260" y="467" class="cell">9696</text>
+  <text x="340" y="467" class="cell">Indexers</text>
+  
+  <rect x="50" y="475" width="400" height="25" fill="#fff"/>
+  <text x="60" y="492" class="cell">qBittorrent</text>
+  <text x="260" y="492" class="cell">8083</text>
+  <text x="340" y="492" class="cell">Downloads</text>
+  
+  <rect x="50" y="500" width="400" height="25" fill="#e8f4f8"/>
+  <text x="60" y="517" class="cell">ProtonVPN (Gluetun)</text>
+  <text x="260" y="517" class="cell">-</text>
+  <text x="340" y="517" class="cell">VPN Gateway</text>
+  
+  <!-- Monitoring Table -->
+  <text x="500" y="365" class="section-title">Monitoring &amp; Support Services</text>
+  
+  <rect x="490" y="375" width="410" height="25" fill="#9b59b6"/>
+  <text x="570" y="392" text-anchor="middle" class="header">Service</text>
+  <text x="720" y="392" text-anchor="middle" class="header">Port</text>
+  <text x="840" y="392" text-anchor="middle" class="header">Function</text>
+  
+  <rect x="490" y="400" width="410" height="25" fill="#e8f4f8"/>
+  <text x="500" y="417" class="cell">Uptime Kuma</text>
+  <text x="700" y="417" class="cell">3001</text>
+  <text x="800" y="417" class="cell">Health Checks</text>
+  
+  <rect x="490" y="425" width="410" height="25" fill="#fff"/>
+  <text x="500" y="442" class="cell">Watchtower</text>
+  <text x="700" y="442" class="cell">-</text>
+  <text x="800" y="442" class="cell">Update Monitor</text>
+  
+  <rect x="490" y="450" width="410" height="25" fill="#e8f4f8"/>
+  <text x="500" y="467" class="cell">Graylog MongoDB</text>
+  <text x="700" y="467" class="cell">172.20.0.30</text>
+  <text x="800" y="467" class="cell">Log Database</text>
+  
+  <rect x="490" y="475" width="410" height="25" fill="#fff"/>
+  <text x="500" y="492" class="cell">Graylog OpenSearch</text>
+  <text x="700" y="492" class="cell">172.20.0.31</text>
+  <text x="800" y="492" class="cell">Log Indexing</text>
+  
+  <rect x="490" y="500" width="410" height="25" fill="#e8f4f8"/>
+  <text x="500" y="517" class="cell">Immich Redis</text>
+  <text x="700" y="517" class="cell">internal</text>
+  <text x="800" y="517" class="cell">Cache</text>
+  
+  <rect x="490" y="525" width="410" height="25" fill="#fff"/>
+  <text x="500" y="542" class="cell">Immich PostgreSQL</text>
+  <text x="700" y="542" class="cell">internal</text>
+  <text x="800" y="542" class="cell">Photo Database</text>
+  
+  <!-- Docker Network IPs -->
+  <text x="60" y="580" class="section-title">Docker Network Static IPs (172.20.0.0/16)</text>
+  
+  <rect x="50" y="590" width="850" height="100" rx="5" fill="#e8f4f8" stroke="#16213e" stroke-width="1"/>
+  
+  <rect x="70" y="610" width="180" height="30" rx="3" fill="#16213e"/>
+  <text x="160" y="630" text-anchor="middle" class="header">172.20.0.30</text>
+  <text x="160" y="650" text-anchor="middle" font-size="10" fill="#666">graylog-mongodb</text>
+  
+  <rect x="270" y="610" width="180" height="30" rx="3" fill="#16213e"/>
+  <text x="360" y="630" text-anchor="middle" class="header">172.20.0.31</text>
+  <text x="360" y="650" text-anchor="middle" font-size="10" fill="#666">graylog-opensearch</text>
+  
+  <rect x="470" y="610" width="180" height="30" rx="3" fill="#16213e"/>
+  <text x="560" y="630" text-anchor="middle" class="header">172.20.0.32</text>
+  <text x="560" y="650" text-anchor="middle" font-size="10" fill="#666">graylog</text>
+  
+  <rect x="670" y="610" width="180" height="30" rx="3" fill="#95a5a6"/>
+  <text x="760" y="630" text-anchor="middle" class="header">DHCP</text>
+  <text x="760" y="650" text-anchor="middle" font-size="10" fill="#666">Other containers</text>
+  
+  <!-- Legend -->
+  <rect x="50" y="710" width="15" height="15" rx="2" fill="#27ae60"/>
+  <text x="72" y="722" font-size="11" fill="#333">Public HTTPS</text>
+  
+  <rect x="170" y="710" width="15" height="15" rx="2" fill="#e94560"/>
+  <text x="192" y="722" font-size="11" fill="#333">VPN-Only</text>
+  
+  <rect x="280" y="710" width="15" height="15" rx="2" fill="#9b59b6"/>
+  <text x="302" y="722" font-size="11" fill="#333">Monitoring</text>
+  
+  <rect x="400" y="710" width="15" height="15" rx="2" fill="#16213e"/>
+  <text x="422" y="722" font-size="11" fill="#333">Infrastructure</text>
+  
+  <text x="550" y="722" font-size="11" fill="#e94560" font-weight="bold">VPN = Tailscale Required</text>
+</svg>
