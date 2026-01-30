@@ -9,7 +9,7 @@ Production-grade personal cloud infrastructure running on TrueNAS Scale with 20+
 | **System** | Dell Precision T3620 |
 | **CPU** | Intel Xeon E3-1245 v6 (4C/8T) |
 | **RAM** | 64GB ECC DDR4 |
-| **Storage** | 500TB ZFS Pool (RAIDZ2) |
+| **Storage** | 16TB ZFS Pool (RAIDZ2) |
 | **Network** | Gigabit Ethernet |
 | **UPS** | APC 1500VA |
 | **OS** | TrueNAS Scale 24.10 |
