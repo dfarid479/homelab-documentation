@@ -57,6 +57,7 @@ Internet
 | [FileBrowser](docker-services/filebrowser/) | Web file manager | :8082 |
 | [Uptime Kuma](docker-services/uptime-kuma/) | Service monitoring | :3001 |
 | [Watchtower](docker-services/watchtower/) | Update monitoring | N/A |
+| [Syncthing](docker-services/syncthing/) | File sync (Obsidian vault) | :20810 |
 
 ### Monitoring & Automation
 | Service | Purpose | Access |
@@ -140,4 +141,4 @@ Use at your own risk - this is a personal homelab environment.
 
 **Last Updated**: December 2024  
 **TrueNAS Version**: 24.10.0  
-**Services**: 20 containers + 1 VM
+**Services**: 21 containers + 1 VM
