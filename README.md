@@ -139,6 +139,6 @@ Use at your own risk - this is a personal homelab environment.
 
 ---
 
-**Last Updated**: December 2024  
+**Last Updated**: March 2026 
 **TrueNAS Version**: 24.10.0  
 **Services**: 21 containers + 1 VM
