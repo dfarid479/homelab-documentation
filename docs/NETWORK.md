@@ -53,11 +53,14 @@ Public services accessible via:
 
 | Service | Internal | External |
 |---------|----------|----------|
-| Plex | 10.0.0.X:32400 | plex.your-domain.net |
-| Immich | 10.0.0.X:2283 | photos.your-domain.net |
-| Vaultwarden | 10.0.0.X:8000 | vault.your-domain.net |
-| Overseerr | 10.0.0.X:5055 | requests.your-domain.net |
-| FileBrowser | 10.0.0.X:8082 | files.your-domain.net |
+| Plex | 10.0.0.X:32400 | plex.waltbyte.net |
+| Immich | 10.0.0.X:8082 | photos.waltbyte.net |
+| Vaultwarden | 10.0.0.X:8200 | vault.waltbyte.net |
+| Overseerr | 10.0.0.X:5055 | requests.waltbyte.net |
+| FileBrowser | 10.0.0.X:8084 | files.waltbyte.net |
+| qBittorrent | 10.0.0.X:8083 | downloads.waltbyte.net |
+| Pi-hole | 10.0.0.X:8080 | dns.waltbyte.net |
+| CouchDB (LiveSync) | 10.0.0.X:5984 | sync.waltbyte.net |
 
 ## VPN Access
 

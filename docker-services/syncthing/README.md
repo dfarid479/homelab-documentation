@@ -1,6 +1,8 @@
 # Syncthing
 
-Continuous file synchronization between TrueNAS, Windows workstation, and iOS devices. Used to sync the Obsidian knowledge base vault across all devices over Tailscale.
+Continuous file synchronization between TrueNAS and Windows workstation. Syncs the Obsidian knowledge base vault at the filesystem level over Tailscale.
+
+> **Note**: iOS sync is handled by **CouchDB + Obsidian LiveSync** (see [couchdb/README.md](../couchdb/README.md)), not Syncthing. Syncthing handles TrueNAS ↔ Windows file-level sync only.
 
 ## Configuration
 
@@ -29,18 +31,18 @@ Syncthing is deployed via the TrueNAS app catalog rather than a standalone docke
 
 ## Synced Folders
 
-| Folder ID | Purpose | TrueNAS Path | Notes |
-|-----------|---------|--------------|-------|
-| `obsidian-vault` | Obsidian knowledge base | `/data/obsidian-vault` | Syncs to Windows + iOS |
+| Folder ID | Purpose | TrueNAS Path | Devices |
+|-----------|---------|--------------|---------|
+| `obsidian-vault` | Obsidian knowledge base files | `/data/obsidian-vault` | TrueNAS + Windows |
 
 ## Connected Devices
 
 | Device | Client | Path |
 |--------|--------|------|
-| Windows workstation | SyncTrayzor x64 | `C:\Users\[user]\iCloudDrive\iCloud~md~obsidian\Obsidian Vault` |
-| iPhone | iCloud (via Windows bridge) | `On My iPhone/Obsidian/Obsidian Vault` |
+| TrueNAS | Syncthing (App Catalog) | `/data/obsidian-vault` |
+| Windows workstation | SyncTrayzor x64 | `C:\Users\dfaridhtu\Documents\Obsidian Vault` |
 
-> **iOS Note**: iOS Syncthing (Möbius Sync) does not support direct folder path access due to sandboxing. iOS sync is handled via iCloud — Windows acts as the bridge between Syncthing and iCloud.
+**iPhone** — handled by CouchDB/LiveSync, not Syncthing. See [../couchdb/README.md](../couchdb/README.md).
 
 ## Initial Setup
 
@@ -79,3 +81,16 @@ tar -xzf syncthing-config-backup.tar.gz -C /
 ```
 
 Vault data at `/mnt/main-storage/obsidian-vault` is backed up as part of the standard storage backup schedule.
+
+## Relationship to CouchDB/LiveSync
+
+| | Syncthing | CouchDB + LiveSync |
+|---|---|---|
+| **Devices** | TrueNAS ↔ Windows | Windows ↔ iPhone |
+| **Protocol** | File sync (block-level delta) | CouchDB replication (document-level) |
+| **iOS support** | No | Yes |
+| **Real-time** | Yes (on change) | Yes (on change) |
+| **Encryption** | TLS in transit | TLS in transit + E2EE at rest |
+| **Role** | Filesystem backup + Windows sync | Active cross-device sync |
+
+The two coexist without conflict — LiveSync does not touch the filesystem path that Syncthing manages.
