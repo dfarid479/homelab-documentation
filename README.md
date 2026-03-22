@@ -79,6 +79,7 @@ Internet
 
 - [Network Architecture](docs/NETWORK.md) - Complete network topology and configuration
 - [Backup Strategy](scripts/backup/) - Automated backup procedures
+- [External Drive Sync](scripts/sync/) - Bidirectional T7 SSD ↔ TrueNAS sync via Windows Task Scheduler
 - [Monitoring Scripts](scripts/monitoring/) - Health check automation
 - [UPS Integration](scripts/ups/) - Power management
 
