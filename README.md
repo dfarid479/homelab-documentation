@@ -12,7 +12,7 @@ Production-grade personal cloud infrastructure running on TrueNAS Scale with 20+
 | **Storage** | 16TB ZFS Pool (RAIDZ2) |
 | **Network** | Gigabit Ethernet |
 | **UPS** | APC 1500VA |
-| **OS** | TrueNAS Scale 24.10 |
+| **OS** | TrueNAS Scale 25.04 |
 
 ## 🌐 Network Architecture
 
@@ -70,6 +70,11 @@ Internet
 | Service | Purpose | Access |
 |---------|---------|--------|
 | [ProtonVPN](docker-services/protonvpn/) | VPN for specific containers | N/A |
+
+### Trading
+| Service | Purpose | Access |
+|---------|---------|--------|
+| [kalshi-trader](docker-services/kalshi-trader/) | Autonomous Kalshi prediction market trading bot | :8000 (LAN only) |
 
 ## 🔧 Virtual Machines
 
@@ -131,8 +136,7 @@ Internet
 
 ## 🔗 Related Projects
 
-- [Blog](https://dfarid479.github.io/) - Detailed homelab posts and guides
-- Forensics tools and scripts (private repository)
+- [Blog](https://dfarid479.github.io/danielfarid.github.io/) - Detailed homelab posts and guides
 
 ## 📄 License
 
@@ -142,5 +146,5 @@ Use at your own risk - this is a personal homelab environment.
 ---
 
 **Last Updated**: March 2026
-**TrueNAS Version**: 24.10.0
-**Services**: 22 containers + 1 VM
+**TrueNAS Version**: 25.04
+**Services**: 23 containers + 1 VM
